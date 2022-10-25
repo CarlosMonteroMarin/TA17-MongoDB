@@ -1,0 +1,17 @@
+use piezas_y_proveedores;
+
+db.createCollection('Piezas');
+db.createCollection('Proveedores');
+db.createCollection('Suministra');
+
+db.Piezas.insertMany([{codigo:44,nombre:'tuerca'},
+{codigo:20,nombre:'tornillo'},
+{codigo:333,nombre:'clavo'}]);
+
+db.Proveedores.insertMany([{codigo_pieza:{codigo:44,nombre:'tuerca'},id_proveedor:{id:14,nombre:'bosh'},precio:3333},
+{codigo_pieza:{codigo:20,nombre:'tornillo'},id_proveedor:{id:12,nombre:'lg'},precio:2515},
+{codigo_pieza:{codigo:333,nombre:'clavo'},id_proveedor:{id:13,nombre:'asus'},precio:15842}]);
+
+db.Suministra.insertMany([{id:14,nombre:'bosh'},
+{id:12,nombre:'lg'},
+{id:13,nombre:'asus'}]);

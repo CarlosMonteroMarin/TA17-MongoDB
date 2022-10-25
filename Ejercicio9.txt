@@ -1,0 +1,21 @@
+use cientificos;
+
+db.createCollection('Cientificos');
+db.createCollection('Proyecto');
+db.createCollection('Asignado_a');
+
+
+db.Cientificos.insertMany
+	([{dni:'11111111A',nom_apels:'Ramon Perez'},
+	{dni:'33333333A',nom_apels:'Antonio Recio'},
+	{dni:'22222222A',nom_apels:'Amador Rivas'}]);
+
+db.Protyecto.insertMany
+	([{codigo:999,nombre:'aviacion',horas:2400},
+	{codigo:888,nombre:'gravedad 0',horas:355},
+	{codigo:777,nombre:'baterias',horas:1500}]);
+
+db.Asignado_a.insertMany
+	([{cientifico:{dni:'11111111A',nom_apels:'Ramon Perez'},proyecto:{codigo:999,nombre:'aviacion',horas:2400}},
+	{cientifico:{dni:'33333333A',nom_apels:'Antonio Recio'},proyecto:{codigo:888,nombre:'gravedad 0',horas:355}},
+ 	{cientifico:{dni:'22222222A',nom_apels:'Amador Rivas'},proyecto:{codigo:777,nombre:'baterias',horas:1500}}]);

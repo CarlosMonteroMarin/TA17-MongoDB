@@ -1,0 +1,37 @@
+use investigadores;
+
+db.createCollection('Facultad');
+db.createCollection('Investigadores');
+db.createCollection('Equipos');
+db.createCollection('Reserva');
+
+db.Facultad.insertMany
+([{codigo:44,nombre:'Facultad de los Deportes'},
+{codigo:20,nombre:'Facultad de Economia'},
+{codigo:333,nombre:'Facultad de Salud'}]);
+
+db.Investigadores.insertMany
+([{dni:'11111111a',nom_apels:'manolo bombo',facultad:{codigo:44,nombre:'Facultad de los Deportes'}},
+{dni:'22222222a',nom_apels:'roman fer',facultad:{codigo:20,nombre:'Facultad de Economia'}},
+{dni:'33333333a',nom_apels:'paco choco',facultad:{codigo:333,nombre:'Facultad de Salud'}}]);
+
+db.Equipos.insertMany
+([{numero_serie:789,nom_apels:'pedro sanchez',facultad:{codigo:44,nombre:'Facultad de los Deportes'}},
+{numero_serie:456,nom_apels:'mariano rajoy',facultad:{codigo:20,nombre:'Facultad de Economia'}},
+{numero_serie:1234,nom_apels:'abascal',facultad:{codigo:333,nombre:'Facultad de Salud'}}]);
+
+db.Reserva.insertMany
+([{dni:{dni:'11111111a',nom_apels:'manolo bombo',facultad:{codigo:44,nombre:'Facultad de los Deportes'}},
+numero_serie:{numero_serie:789,nom_apels:'pedro sanchez',facultad:{codigo:44,nombre:'Facultad de los Deportes'}},
+comienzo:'2022-1-1',
+fin:'2022-1-25'},
+
+{dni:{dni:'22222222a',nom_apels:'roman fer',facultad:{codigo:20,nombre:'Facultad de Economia'}},
+numero_serie:{numero_serie:456,nom_apels:'mariano rajoy',facultad:{codigo:20,nombre:'Facultad de Economia'}},
+comienzo:'2022-2-1',
+fin:'2022-2-25'},
+
+{dni:{dni:'33333333a',nom_apels:'paco choco',facultad:{codigo:333,nombre:'Facultad de Salud'}},
+numero_serie:{numero_serie:1234,nom_apels:'abascal',facultad:{codigo:333,nombre:'Facultad de Salud'}},
+comienzo:'2022-3-1',
+fin:'2022-3-25'}]);
